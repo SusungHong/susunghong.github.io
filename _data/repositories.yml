@@ -1,0 +1,12 @@
+github_users:
+  - SusungHong
+
+github_repos:
+  - huggingface/diffusers
+  - threestudio-project/threestudio
+  - KU-CVLAB/Self-Attention-Guidance
+  - SusungHong/Self-Attention-Guidance
+  - SusungHong/IF-DreamFusion
+  - SusungHong/Debiased-Score-Distillation-Sampling
+  - KU-CVLAB/DirecT2V
+  - KU-CVLAB/NeMF
