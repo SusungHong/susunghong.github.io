@@ -42,12 +42,10 @@ layout: default
             {%- if page.social %}
             <div class="social">
               <div class="contact-icons">
-              <!-- Download CV -->
               {% if page.cv_pdf %}
-              <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" title="CV">
-                <i class="fa-solid fa-download"></i>
-              </a>
+              <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}" title="CV"><i class="fa-solid fa-download"></i></a>
               {% endif %}
+              <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fab fa-github"></i></a>
               {% include social.html %}
               </div>
               <div class="contact-note">
