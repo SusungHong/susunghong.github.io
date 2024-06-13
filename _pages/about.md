@@ -19,6 +19,6 @@ Welcome to my website! I am an incoming Ph.D. student at the [Allen School](http
 
 Currently, my research interests include, but are not limited to, generative models, neural fields, and {text-to-x \| x ∈ {video, 3D, 4D}}. I aim to implement a superior clone of our world through the knowledge learned by models.
 
-During my undergraduate years, I was fortunate to work with [Seungryong Kim](https://cvlab.korea.ac.kr/members/faculty), [Minjoon Seo](https://seominjoon.github.io/), and [Ricardo Martin-Brualla](https://ricardomartinbrualla.com/). Their guidance has been instrumental in my development as a researcher.
+During my undergraduate years, I had the good fortune to work with [Seungryong Kim](https://cvlab.korea.ac.kr/members/faculty), [Minjoon Seo](https://seominjoon.github.io/), and [Ricardo Martin-Brualla](https://ricardomartinbrualla.com/). Their guidance has been instrumental in my development as a researcher.
 
 In my free time, I usually enjoy working out, reading books, and caring for my cat. If you have any questions about me, please feel free to email or send me a direct message.
