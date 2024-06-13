@@ -21,4 +21,4 @@ Currently, my research interests include, but are not limited to, generative mod
 
 During my undergraduate years, I was fortunate to work with [Profs. Ira Kemelmacher-Shlizerman](https://www.irakemelmacher.com/), [Seungryong Kim](https://cvlab.korea.ac.kr/members/faculty), [Minjoon Seo](https://seominjoon.github.io/), and [Dr. Ricardo Martin-Brualla](https://ricardomartinbrualla.com/). Their mentorship has been instrumental in my development as a researcher.
 
-In my free time, I enjoy working out, reading books, and caring for my cat. If you have any questions about me, please feel free to email or send me a direct message.
+In my free time, I usually enjoy working out, reading books, and caring for my cat. If you have any questions about me, please feel free to email or send me a direct message.
