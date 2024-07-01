@@ -18,5 +18,3 @@ social: true  # includes social icons at the bottom of the page
 Welcome to my website! I am an incoming Ph.D. student at the [Allen School](https://www.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/), co-advised by [Ira Kemelmacher-Shlizerman](https://www.irakemelmacher.com/), [Steve Seitz](https://www.smseitz.com/), and [Brian Curless](https://homes.cs.washington.edu/~curless/).
 
 Currently, my research interests include, but are not limited to, generative models, neural fields, and {text-to-x \| x ∈ {video, 3D, 4D}}. I aim to implement a superior clone of our world through the knowledge learned by models.
-
-During my undergraduate years, I had the good fortune to work with [Seungryong Kim](https://cvlab.korea.ac.kr/members/faculty), [Minjoon Seo](https://seominjoon.github.io/), and [Ricardo Martin-Brualla](https://ricardomartinbrualla.com/). Their guidance has been instrumental in my development as a researcher.
