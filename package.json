@@ -1,6 +1,24 @@
 {
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "1.4.0",
-    "prettier": "3.1.1"
-  }
+    "prettier": "3.1.1",
+    "prettier-plugin-liquid": "^0.0.1-security"
+  },
+  "name": "susungpage",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "purgecss.config.js",
+  "dependencies": {
+    "html-styles": "^1.0.0",
+    "isarray": "^1.0.0",
+    "isobject": "^2.1.0",
+    "line-column": "^1.0.2",
+    "ohm-js": "^16.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
