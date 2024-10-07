@@ -38,7 +38,21 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix">
+      {{ content }}
+      <!-- Social -->
+      {%- if page.social %}
+        <div class="social">
+          <div class="contact-icons">
+            {% include social.html %}
+            <a href="assets/pdf/CV.pdf" title="CV"><i class="fa fa-file-pdf"></i></a>
+          </div>
+          <div class="contact-note">
+            {{ site.contact_note }}
+          </div>
+        </div>
+      {%- endif %}
+    </div>
 
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
