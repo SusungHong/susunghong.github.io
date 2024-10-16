@@ -85,7 +85,7 @@
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.scholar_userid %}
-    {% capture link %}https://scholar.google.com/citations?user={{ site.scholar_userid }}&hl=en{% endcapture %}
+    {% capture link %}https://scholar.google.com/citations?user={{ site.scholar_userid }}{% endcapture %}
     {% assign sameaslinks = sameaslinks | push: link %}
   {% endif %}
   {% if site.semanticscholar_id %}
