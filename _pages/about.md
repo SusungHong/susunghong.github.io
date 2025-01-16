@@ -17,4 +17,4 @@ social: true # includes social icons at the bottom of the page
 
 Welcome to my website! I am a Ph.D. student in [GRAIL](https://grail.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/), co-advised by [Ira Kemelmacher-Shlizerman](https://www.irakemelmacher.com/), [Steve Seitz](https://www.smseitz.com/), and [Brian Curless](https://homes.cs.washington.edu/~curless/).
 
-My research interests lie in **diffusion models for image/video/3D/4D generation** and their potential to **understand and construct sophisticated environments**.
+My research interests lie in diffusion models for image/video/3D/4D generation and their potential to understand and construct sophisticated environments.
