@@ -19,4 +19,4 @@ Welcome to my website! I am a Ph.D. student in [GRAIL](https://grail.cs.washingt
 
 My research interest lies in the foundations of generative AI, and its applications to creating multimedia content and constructing virtual worlds.
 
-If you are interested in collaboration or have any questions about me, please connect with me through any of the following channels:
+If you are interested in collaboration or have any questions about my research, please connect with me through any of the following channels:
