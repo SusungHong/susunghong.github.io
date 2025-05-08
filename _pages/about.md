@@ -18,3 +18,5 @@ social: true # includes social icons at the bottom of the page
 Welcome to my website! I am a Ph.D. student in [GRAIL](https://grail.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/), co-advised by [Ira Kemelmacher-Shlizerman](https://www.irakemelmacher.com/), [Steve Seitz](https://www.smseitz.com/), and [Brian Curless](https://homes.cs.washington.edu/~curless/).
 
 My research interest lies in the foundations of generative AI, and its applications to creating multimedia content and constructing virtual worlds.
+
+If you are interested in collaboration or have any questions about me, please connect with me through any of the following channels:
