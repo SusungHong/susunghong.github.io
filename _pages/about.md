@@ -17,4 +17,6 @@ social: true # includes social icons at the bottom of the page
 
 Welcome to my website! I am a Ph.D. student in [GRAIL](https://grail.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/), co-advised by [Steve Seitz](https://www.smseitz.com/), [Brian Curless](https://homes.cs.washington.edu/~curless/), and [Ira Kemelmacher-Shlizerman](https://www.irakemelmacher.com/). My research interests lie in the foundations of generative AI, and its applications to producing immersive video/3D content.
 
-If you are interested in collaboration or would like to learn more about my research, please connect:
+I love cats, coffee (especially lattes), video games, cooking, and playing baseball. I enjoy learning new things beyond my research area.
+
+If you are interested in collaboration or would like to learn more about my research, please reach out:
