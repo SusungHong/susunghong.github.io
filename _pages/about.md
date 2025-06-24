@@ -19,4 +19,4 @@ Welcome to my website! I am a Ph.D. student in [GRAIL](https://grail.cs.washingt
 
 I love cats, coffee (especially lattes), video games, cooking, and playing baseball. I enjoy learning new things beyond my research area.
 
-If you are interested in collaboration or would like to learn more about my research, please reach out:
+If you are interested in collaboration or would like to learn more about my research, please connect:
