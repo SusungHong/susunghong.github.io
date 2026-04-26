@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<section class="page-section post-section">
+  <div class="container container--post">
+    <article class="post post--essay" itemscope itemtype="https://schema.org/BlogPosting">
+      {% assign words = content | number_of_words %}
+      {% assign read_time = words | divided_by: 180 %}
+      {% if read_time < 1 %}{% assign read_time = 1 %}{% endif %}
+      {% assign post_authors = page.authors | default: page.author %}
+      {% if post_authors %}
+        {% if post_authors.first %}
+          {% assign author_label = post_authors | array_to_sentence_string %}
+        {% else %}
+          {% assign author_label = post_authors %}
+        {% endif %}
+      {% else %}
+        {% assign author_label = site.author.first_name | append: ' ' | append: site.author.last_name %}
+      {% endif %}
+      {% include essay-style.html %}
+      <p class="post-back"><a href="{{ '/blog/' | relative_url }}">&larr; Blog</a></p>
+      <div class="essay">
+        <h1 itemprop="headline">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+        <p class="byline">
+          <span>{{ author_label }}</span>
+          <span class="byline-sep">|</span>
+          <span class="byline-date">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.last_edited %} <span class="byline-edited">(last edited <time datetime="{{ page.last_edited | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_edited | date: "%b %-d, %Y" }}</time>)</span>{% endif %}
+          </span>
+          <span class="byline-sep">|</span>
+          <span>{{ read_time }} min read</span>
+        </p>
+        {% if page.disclaimer %}
+        <p class="disclaimer">{{ page.disclaimer }}</p>
+        {% endif %}
+        <hr class="title-rule" />
+        {{ content }}
+        <div class="end-rule">✦</div>
+      </div>
+      {% if page.comments %}
+      <div class="post-comments" id="comments">
+        <h2 class="post-comments-heading">Comments</h2>
+        <p class="post-comments-note">Comments are powered by <a href="https://utteranc.es/" target="_blank" rel="noopener">Utterances</a> and stored as issues in the site&rsquo;s GitHub repository.</p>
+        {% include comments-utterances.html %}
+      </div>
+      {% endif %}
+    </article>
+  </div>
+</section>

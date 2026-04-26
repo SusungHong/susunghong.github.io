@@ -1,0 +1,41 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<section class="page-section blog-index-section">
+  <div class="container">
+    <h1 class="page-heading">Blog</h1>
+    <p class="blog-lede">Notes on what lasts.</p>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        {% assign words = post.content | number_of_words %}
+        {% assign read_time = words | divided_by: 180 %}
+        {% if read_time < 1 %}{% assign read_time = 1 %}{% endif %}
+        {% assign post_authors = post.authors | default: post.author %}
+        {% if post_authors %}
+          {% if post_authors.first %}
+            {% assign author_label = post_authors | array_to_sentence_string %}
+          {% else %}
+            {% assign author_label = post_authors %}
+          {% endif %}
+        {% else %}
+          {% assign author_label = site.author.first_name | append: ' ' | append: site.author.last_name %}
+        {% endif %}
+        <li class="post-list-item">
+          <a class="post-list-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% if post.subtitle %}
+          <p class="post-list-subtitle">{{ post.subtitle }}</p>
+          {% endif %}
+          <p class="post-list-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            <span class="post-list-meta-sep">|</span>
+            <span>{{ read_time }} min read</span>
+            <span class="post-list-meta-sep">|</span>
+            <span>{{ author_label }}</span>
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

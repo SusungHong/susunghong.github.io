@@ -1,0 +1,61 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-heading">
+      <h1>{% include author-name-styled.html %}</h1>
+    </div>
+    <div class="hero-body">
+      <div class="bio">
+        {{ site.data.bio.text | markdownify }}
+      </div>
+      {% include social-icons.html %}
+    </div>
+    <div class="hero-portrait">
+      <img src="{{ '/assets/img/' | append: site.profile_image | relative_url }}" alt="{{ site.author.name }}">
+    </div>
+  </div>
+</section>
+
+<section class="news-section" id="news">
+  <div class="container">
+    <h2 class="section-heading">News</h2>
+    <div class="news-list">
+      {% for item in site.data.news %}
+      <div class="news-item">
+        <time class="news-date">{{ item.date | date: "%b %Y" }}</time>
+        <div class="news-text">{{ item.text | markdownify }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="publications-section" id="selected-publications">
+  <div class="container">
+    <h2 class="section-heading">Selected Publications</h2>
+    {% bibliography --group_by none --query @*[selected=true]* %}
+    <p class="view-all"><a href="{{ '/publications/' | relative_url }}">View all publications &rarr;</a></p>
+  </div>
+</section>
+
+<section class="experience-section" id="experience">
+  <div class="container">
+    <h2 class="section-heading">Experience</h2>
+    <div class="experience-timeline">
+      {% for item in site.data.experience %}
+      <div class="experience-item">
+        <time class="experience-date">{{ item.period }}</time>
+        <div class="experience-text">
+          <p class="experience-line"><strong class="experience-org">{{ item.organization }}</strong><span class="experience-sep"> | </span><span class="experience-role">{{ item.role }}</span></p>
+          {% if item.detail %}
+          <div class="experience-detail">{{ item.detail | markdownify }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

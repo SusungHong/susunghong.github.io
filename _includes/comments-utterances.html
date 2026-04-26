@@ -1,0 +1,10 @@
+{% assign utter_repo = site.comments.utterances.repo %}
+{% if utter_repo and utter_repo != "" %}
+<script src="https://utteranc.es/client.js"
+        repo="{{ utter_repo }}"
+        issue-term="{{ site.comments.utterances.issue_term | default: 'pathname' }}"
+        theme="{{ site.comments.utterances.theme | default: 'preferred-color-scheme' }}"
+        crossorigin="anonymous"
+        async>
+</script>
+{% endif %}

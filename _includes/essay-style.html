@@ -1,0 +1,134 @@
+<style>
+  .essay {
+    margin: 0 auto;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .essay h1 {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    color: var(--text);
+  }
+
+  .essay .subtitle {
+    font-family: var(--font);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    margin: 0 0 10px;
+  }
+
+  .essay .byline {
+    font-size: 14px;
+    color: var(--text-secondary);
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.5em;
+  }
+
+  .essay .byline time {
+    font: inherit;
+    color: inherit;
+  }
+
+  .essay .byline .byline-sep {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+
+  .essay .byline .byline-edited {
+    font-style: italic;
+  }
+
+  .essay .disclaimer {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 44px;
+  }
+
+  .essay .title-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin: 36px 0 44px;
+    border: 0;
+  }
+
+  .essay p {
+    margin: 0 0 1.4em;
+    color: var(--text);
+  }
+
+  .essay h2 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 52px 0 18px;
+  }
+
+  .essay blockquote {
+    border-left: 2px solid var(--accent);
+    margin: 36px 0;
+    padding: 4px 0 4px 24px;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text);
+    background: transparent;
+  }
+
+  .essay blockquote p { margin: 0; }
+
+  .essay em {
+    font-style: italic;
+    color: var(--text);
+  }
+
+  .essay strong {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .essay .note {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+    border-left: 1px solid var(--border);
+    padding-left: 16px;
+    margin: 24px 0 24px 32px;
+  }
+
+  .essay .end-rule {
+    margin-top: 64px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .essay { font-size: 16px; }
+    .essay blockquote { font-size: 17px; padding-left: 18px; }
+  }
+</style>

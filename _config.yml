@@ -1,0 +1,84 @@
+title: Susung Hong
+description: "Welcome to my website!"
+url: https://susunghong.github.io
+baseurl: ""
+
+author:
+  first_name: Susung
+  last_name: Hong
+  korean_name: "홍수성"
+  pronunciation: "/suːsʌŋ hɔŋ/"
+  email: susung@cs.washington.edu
+  github: SusungHong
+  linkedin: susung-hong-1600bb253
+  scholar: HigIHvUAAAAJ
+  twitter: SusungHong
+
+profile_image: space.jpg
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# LaTeX via Kramdown → MathJax (see _includes/head.html on post pages)
+kramdown:
+  input: GFM
+  math_engine: mathjax
+
+defaults:
+  - scope:
+      path: _posts
+    values:
+      layout: post
+      permalink: /blog/:slug/
+      comments: false
+
+comments:
+  utterances:
+    repo: SusungHong/SusungHong.github.io
+    issue_term: pathname
+    theme: preferred-color-scheme
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll/scholar
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+google_analytics: G-H65BW5WMBX
+enable_google_analytics: true
+google_site_verification: U7ShF4XNRKB_xBG2vlHolMhFbd-81hn1Pir-BQQNHsI
+
+scholar:
+  style: apa
+  locale: en
+  source: _data
+  bibliography: papers.bib
+  bibliography_template: bib
+  query: "@*"
+  sort_by: none
+  group_by: year
+  group_order: descending
+  bibliography_class: pub-bib
+  bibliography_list_tag: div
+  bibliography_item_tag: div
+  last_name: [Hong]
+  first_name: [Susung]
+  replace_strings: true
+  join_strings: true
+  details_link: false
+  bibtex_filters:
+    - latex
+    - smallcaps
+    - superscript

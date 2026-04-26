@@ -1,0 +1,55 @@
+---
+---
+<article class="pub-card" id="{{ key }}">
+  {% if entry.preview %}
+  <div class="pub-thumb">
+    <img src="{{ '/assets/img/publication_preview/' | append: entry.preview | relative_url }}" alt="{{ entry.title | xml_escape }}" loading="lazy">
+  </div>
+  {% endif %}
+  <div class="pub-info">
+    <div class="pub-title-row">
+      <h3 class="pub-title">{{ entry.title }}</h3>
+      <div class="pub-meta">
+        {% if entry.abbr %}
+        {% assign ab = entry.abbr | downcase | replace: ' ', '' %}
+        {% assign venue_theme = '' %}
+        {% if ab == 'cvpr' or ab == 'cvprw' %}
+          {% assign venue_theme = 'cvpr' %}
+        {% elsif ab == 'iccv' or ab == 'iccvw' %}
+          {% assign venue_theme = 'iccv' %}
+        {% elsif ab == 'eccv' or ab == 'eccvw' %}
+          {% assign venue_theme = 'eccv' %}
+        {% elsif ab == 'neurips' or ab == 'neuripsw' %}
+          {% assign venue_theme = 'neurips' %}
+        {% elsif ab == 'iclr' or ab == 'iclrw' %}
+          {% assign venue_theme = 'iclr' %}
+        {% elsif ab == 'icml' or ab == 'icmlw' %}
+          {% assign venue_theme = 'icml' %}
+        {% endif %}
+        <span class="pub-venue{% if venue_theme != '' %} venue-{{ venue_theme }}{% endif %}">{{ entry.abbr }} {{ entry.year }}</span>
+        {% else %}
+        <span class="pub-venue">{{ entry.year }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <p class="pub-authors">
+      {% for author in entry.author_array %}
+        {% assign last_clean = author.last | replace: '*', '' | replace: '∗', '' | strip %}
+        {% assign is_self = false %}
+        {% if site.scholar.last_name contains last_clean and site.scholar.first_name contains author.first %}
+          {% assign is_self = true %}
+        {% endif %}
+        {% unless forloop.first %}, {% endunless %}
+        {% if is_self %}<strong>{{ author.first }} {{ author.last }}</strong>{% else %}{{ author.first }} {{ author.last }}{% endif %}
+      {% endfor %}
+    </p>
+    <div class="pub-links">
+      {% if entry.arxiv and entry.arxiv != '' %}
+      <a href="https://arxiv.org/abs/{{ entry.arxiv }}" target="_blank" rel="noopener" class="pub-link">Paper</a>
+      {% endif %}
+      {% if entry.website and entry.website != '' %}
+      <a href="{{ entry.website }}" target="_blank" rel="noopener" class="pub-link">Project</a>
+      {% endif %}
+    </div>
+  </div>
+</article>
