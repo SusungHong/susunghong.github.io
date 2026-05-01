@@ -3,6 +3,32 @@
   var nav = document.getElementById("site-nav");
   var themeToggle = document.getElementById("theme-toggle");
   var root = document.documentElement;
+  var header = document.querySelector(".site-header");
+
+  if (header) {
+    var SCROLL_THRESHOLD = 36;
+    var scrolledClassApplied = false;
+    var ticking = false;
+
+    function updateHeaderState() {
+      var shouldBeScrolled = window.scrollY > SCROLL_THRESHOLD;
+      if (shouldBeScrolled !== scrolledClassApplied) {
+        header.classList.toggle("scrolled", shouldBeScrolled);
+        scrolledClassApplied = shouldBeScrolled;
+      }
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeaderState);
+        ticking = true;
+      }
+    }
+
+    updateHeaderState();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
   function getEffectiveTheme() {
     var explicit = root.getAttribute("data-theme");

@@ -129,31 +129,88 @@ strong {
 // Header
 // ============================================================
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--header-h);
-  background: var(--bg-chrome);
+  background: transparent;
   border-bottom: none;
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition), border-color var(--transition),
+    backdrop-filter var(--transition), box-shadow var(--transition);
 
   .container {
     display: flex;
     align-items: center;
     height: 100%;
     gap: 32px;
-    border-bottom: 1px solid var(--border-chrome);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition);
+  }
+
+  .site-title,
+  .nav-link,
+  .theme-toggle,
+  .menu-toggle {
+    color: var(--text);
+    transition: color var(--transition), border-color var(--transition),
+      background var(--transition);
+  }
+
+  .nav-link {
+    color: var(--text-secondary);
+
+    &:hover,
+    &.active {
+      color: var(--text);
+    }
+  }
+
+  &.scrolled {
+    background: var(--bg-chrome);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    box-shadow: var(--shadow);
+
+    .container {
+      border-bottom-color: var(--border-chrome);
+    }
+
+    .site-title,
+    .theme-toggle,
+    .menu-toggle {
+      color: var(--text-chrome);
+    }
+
+    .nav-link {
+      color: var(--text-chrome-muted);
+
+      &:hover,
+      &.active {
+        color: var(--text-chrome);
+      }
+    }
   }
 }
 
-@media (min-width: 721px) {
-  body.is-home .site-title {
-    display: none;
-  }
+body {
+  padding-top: var(--header-h);
 }
 
 .name-family {
   font-weight: lighter;
+}
+
+body.is-home .site-header:not(.scrolled) .site-title {
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+}
+
+body.is-home .site-title {
+  transition: opacity var(--transition), transform var(--transition),
+    color var(--transition);
 }
 
 .site-title {
@@ -991,6 +1048,10 @@ div.pub-bib {
 .footer-right {
   justify-self: end;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
 }
 
 // ============================================================
@@ -1064,8 +1125,8 @@ div.pub-bib {
     left: 0;
     right: 0;
     margin-left: 0;
-    background: var(--bg-chrome);
-    border-bottom: 1px solid var(--border-chrome);
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
     flex-direction: column;
     padding: 16px 24px;
     gap: 12px;
@@ -1079,6 +1140,11 @@ div.pub-bib {
       opacity: 1;
       pointer-events: all;
     }
+  }
+
+  .site-header.scrolled .site-nav {
+    background: var(--bg-chrome);
+    border-bottom-color: var(--border-chrome);
   }
 
   .menu-toggle {
