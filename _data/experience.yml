@@ -1,41 +1,54 @@
 - period: "2026–present"
   organization: Google
   role: PhD Student Researcher
+  letter_colors:
+    - "#4285F4" # G
+    - "#EA4335" # o
+    - "#FBBC05" # o
+    - "#4285F4" # g
+    - "#34A853" # l
+    - "#EA4335" # e
   detail: |
     Generative media team
 
 - period: "2025"
   organization: Adobe
   role: Research Scientist Intern
+  color: "#EB1000"
   detail: |
     Video diffusion previews (Mentors: Jui-Hsien Wang, Chongjian Ge, Zhifei Zhang)
 
 - period: "2024–present"
   organization: UW GRAIL
   role: Research Assistant
+  color: "#32006E"
   detail: |
     Immersive video/3D content production (Advisors: Steve Seitz, Brian Curless, Ira Kemelmacher-Shlizerman)
 
 - period: "2024"
   organization: NAVER
   role: Research Intern
+  color: "#03C75A"
   detail: |
     (1) Effective rank regularization for 3D Gaussian Splatting and (2) generative relighting (Mentor: Jin-Hwa Kim)
 
 - period: "2023"
   organization: UW GRAIL
   role: Undergraduate Research Assistant
+  color: "#32006E"
   detail: |
     Flexible 3D editing with generative trajectories (Advisors: Ira Kemelmacher-Shlizerman, Ricardo Martin-Brualla, Johanna Karras)
 
 - period: "2023"
   organization: Twelve Labs
   role: ML Research Intern
+  color: "#000000"
   detail: |
    (1) Video-language model agents and (2) high-quality dataset construction (Mentor: Minjoon Seo)
 
 - period: "2022–2023"
   organization: CVLAB
   role: Undergraduate Research Assistant
+  color: "#2C61B5"
   detail: |
     Image, 3D, video generation, and neural fields (Advisor: Seungryong Kim)

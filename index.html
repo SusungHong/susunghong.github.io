@@ -46,10 +46,10 @@ title: Home
     <h2 class="section-heading">Experience</h2>
     <div class="experience-timeline">
       {% for item in site.data.experience %}
-      <div class="experience-item">
+      <div class="experience-item{% if item.color %} experience-item--brand{% endif %}"{% if item.letter_colors %} style="--experience-gradient: linear-gradient(135deg, {{ item.letter_colors | join: ', ' }})"{% elsif item.color %} style="--experience-color: {{ item.color }}"{% endif %}>
         <time class="experience-date">{{ item.period }}</time>
         <div class="experience-text">
-          <p class="experience-line"><strong class="experience-org">{{ item.organization }}</strong><span class="experience-sep"> | </span><span class="experience-role">{{ item.role }}</span></p>
+          <p class="experience-line"><strong class="experience-org">{% if item.letter_colors %}{% assign org_chars = item.organization | split: '' %}{% for char in org_chars %}<span class="experience-org-letter" style="color: {{ item.letter_colors[forloop.index0] }}">{{ char }}</span>{% endfor %}{% else %}{{ item.organization }}{% endif %}</strong><span class="experience-sep"> | </span><span class="experience-role">{{ item.role }}</span></p>
           {% if item.detail %}
           <div class="experience-detail">{{ item.detail | markdownify }}</div>
           {% endif %}

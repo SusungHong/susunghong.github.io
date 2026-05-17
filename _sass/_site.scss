@@ -723,10 +723,10 @@ body.is-home .site-title {
     content: "";
     position: absolute;
     left: -7px;
-    top: 6px;
+    top: 5px;
     width: 12px;
     height: 12px;
-    background: var(--accent);
+    background: var(--experience-gradient, var(--experience-color, var(--accent)));
     border: 2px solid var(--bg);
     border-radius: 50%;
   }
@@ -779,6 +779,24 @@ body.is-home .site-title {
 
 .experience-org {
   font-size: 1.05em;
+}
+
+.experience-item--brand .experience-org {
+  color: var(--experience-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .experience-item--brand[style*="#000000"] {
+    --experience-color: #ffffff;
+  }
+}
+
+:root[data-theme="dark"] .experience-item--brand[style*="#000000"] {
+  --experience-color: #ffffff;
+}
+
+.experience-org-letter {
+  font-weight: inherit;
 }
 
 .experience-text .experience-sep {
