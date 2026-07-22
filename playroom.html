@@ -1,0 +1,236 @@
+---
+layout: playroom
+title: The Playroom
+permalink: /playroom/
+sitemap: false
+robots: noindex, nofollow
+---
+<section class="playroom" data-playroom>
+  <div class="container">
+    <header class="playroom-intro">
+      <p class="playroom-kicker">Hidden page.</p>
+      <h1>The Playroom</h1>
+      <p>Browser-only tools. Nothing is uploaded.</p>
+    </header>
+
+    <div class="app-grid" aria-label="Experiments">
+      <button class="app-card" type="button" data-open-app="retirement">
+        <span class="app-card__number">01</span>
+        <span class="app-card__icon" aria-hidden="true">⌁</span>
+        <span class="app-card__title">Financial Independence</span>
+        <span class="app-card__description">Estimate when investment returns cover your annual spending.</span>
+        <span class="app-card__action">Find the crossover <span aria-hidden="true">→</span></span>
+      </button>
+
+      <button class="app-card" type="button" data-open-app="voice">
+        <span class="app-card__number">02</span>
+        <span class="app-card__icon" aria-hidden="true">∿</span>
+        <span class="app-card__title">What Kind of Voice?</span>
+        <span class="app-card__description">15-second mic test to estimate your pitch range and voice type.</span>
+        <span class="app-card__action">Use microphone <span aria-hidden="true">→</span></span>
+      </button>
+
+      <button class="app-card" type="button" data-open-app="life">
+        <span class="app-card__number">03</span>
+        <span class="app-card__icon" aria-hidden="true">⌬</span>
+        <span class="app-card__title">Little Life</span>
+        <span class="app-card__description">Simulated creatures that evolve based on diet, size, speed, and
+          intelligence.</span>
+        <span class="app-card__action">Enter the ecosystem <span aria-hidden="true">→</span></span>
+      </button>
+    </div>
+
+    <section class="app-panel" data-app="retirement" hidden aria-labelledby="retirement-title">
+      <div class="app-panel__bar">
+        <button class="back-button" type="button" data-close-app aria-label="Back to all experiments">← All
+          experiments</button>
+        <span>Sustainability engine</span>
+      </div>
+      <div class="app-panel__heading">
+        <p class="app-eyebrow">01 / Financial Independence</p>
+        <h2 id="retirement-title" tabindex="-1">Financial independence calculator</h2>
+        <p>Projects the age at which inflation-adjusted investment returns cover your spending, after taxes and periodic
+          market drawdowns.</p>
+      </div>
+
+      <form id="retirement-form" class="tool-form" novalidate>
+        <fieldset>
+          <legend>You, now</legend>
+          <div class="field-grid">
+            <label class="field">
+              <span>Current age</span>
+              <span class="field-input"><input id="current-age" type="number" min="16" max="90" step="1" value="30"
+                  required><span>years</span></span>
+            </label>
+            <label class="field">
+              <span>Invested savings</span>
+              <span class="field-input"><span>$</span><input id="current-savings" type="number" min="0" step="1000"
+                  value="100000" required></span>
+            </label>
+            <label class="field">
+              <span>After-tax annual income</span>
+              <span class="field-input"><span>$</span><input id="after-tax-income" type="number" min="0" step="1000"
+                  value="100000" required></span>
+            </label>
+            <label class="field">
+              <span>Annual spending (today’s dollars)</span>
+              <span class="field-input"><span>$</span><input id="annual-spending" type="number" min="1000" step="1000"
+                  value="50000" required></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Assumptions</legend>
+          <div class="field-grid">
+            <label class="field">
+              <span>Return before independence</span>
+              <span class="field-input"><input id="pre-return" type="number" min="-20" max="30" step="0.1"
+                  value="10"><span>% / year</span></span>
+            </label>
+            <label class="field">
+              <span>Long-run return after independence</span>
+              <span class="field-input"><input id="post-return" type="number" min="-20" max="30" step="0.1"
+                  value="5"><span>% / year</span></span>
+            </label>
+            <label class="field">
+              <span>Inflation</span>
+              <span class="field-input"><input id="inflation" type="number" min="-5" max="20" step="0.1"
+                  value="3"><span>% / year</span></span>
+            </label>
+            <label class="field">
+              <span>Effective tax on withdrawals</span>
+              <span class="field-input"><input id="withdrawal-tax" type="number" min="0" max="70" step="0.5"
+                  value="12"><span>%</span></span>
+            </label>
+            <label class="field">
+              <span>Retirement age</span>
+              <span class="field-input"><input id="retirement-age" type="number" min="18" max="100" step="1"
+                  value="65"><span>years</span></span>
+            </label>
+            <label class="field">
+              <span>Next Doomsday in</span>
+              <span class="field-input"><input id="crash-delay" type="number" min="0" max="100" step="0.5"
+                  value="5"><span>years</span></span>
+            </label>
+            <label class="field">
+              <span>Doomsday repeats every</span>
+              <span class="field-input"><input id="crash-interval" type="number" min="1" max="100" step="1"
+                  value="20"><span>years</span></span>
+            </label>
+            <label class="field">
+              <span>Doomsday portfolio loss</span>
+              <span class="field-input"><input id="crash-loss" type="number" min="0" max="99" step="1"
+                  value="20"><span>% each</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button class="primary-button" type="submit">When do I reach FI?</button>
+      </form>
+
+      <div id="retirement-result" class="tool-result" aria-live="polite" hidden></div>
+      <p class="tool-note">Before retirement, everything left of after-tax income after spending is invested. Spending
+        is in today’s dollars and rises with inflation. Doomsday defaults are −20% every 20 years, with the next hit in
+        5 years. For exploration only.</p>
+    </section>
+
+    <section class="app-panel" data-app="voice" hidden aria-labelledby="voice-title">
+      <div class="app-panel__bar">
+        <button class="back-button" type="button" data-close-app aria-label="Back to all experiments">← All
+          experiments</button>
+        <span>Local audio analysis</span>
+      </div>
+      <div class="app-panel__heading">
+        <p class="app-eyebrow">02 / What Kind of Voice?</p>
+        <h2 id="voice-title" tabindex="-1">Pitch range test</h2>
+        <p>Calibrate with a comfortable "ah," then glide slowly down and up. Stay relaxed—don’t force either extreme.
+        </p>
+      </div>
+
+      <div class="voice-stage" id="voice-stage">
+        <div class="voice-orb" id="voice-orb" aria-hidden="true">
+          <span id="voice-note">—</span>
+          <small id="voice-frequency">waiting</small>
+        </div>
+        <div class="voice-phase" aria-live="polite">
+          <span id="voice-phase">Ready</span>
+          <strong id="voice-countdown">15</strong>
+        </div>
+        <div class="voice-meter" aria-hidden="true"><span id="voice-meter-fill"></span></div>
+        <p id="voice-instruction" class="voice-instruction">Your microphone audio stays on this device and is discarded
+          when the test ends.</p>
+        <button id="voice-start" class="primary-button" type="button">Start 15-second test</button>
+        <button id="voice-stop" class="secondary-button" type="button" hidden>Stop early</button>
+        <div id="voice-result" class="tool-result" aria-live="polite" hidden></div>
+      </div>
+      <p class="tool-note">This estimates pitch range, not a clinical or professional voice classification. Fach also
+        depends on tessitura, timbre, passaggi, training, age, and vocal health.</p>
+    </section>
+
+    <section class="app-panel app-panel--wide" data-app="life" hidden aria-labelledby="life-title">
+      <div class="app-panel__bar">
+        <button class="back-button" type="button" data-close-app aria-label="Back to all experiments">← All
+          experiments</button>
+        <span>Evolution sandbox</span>
+      </div>
+      <div class="app-panel__heading">
+        <p class="app-eyebrow">03 / Little Life</p>
+        <h2 id="life-title" tabindex="-1">Evolution sandbox</h2>
+        <p>Creatures inherit diet, size, speed, and intelligence. Observe selection pressure over time.</p>
+      </div>
+      <div class="life-shell" id="life-simulator">
+        <div class="life-toolbar" aria-label="Simulation controls">
+          <div class="life-controls">
+            <button id="life-toggle" class="sim-button" type="button">Pause</button>
+            <button class="sim-button is-active" type="button" data-life-speed="1">1×</button>
+            <button class="sim-button" type="button" data-life-speed="2">2×</button>
+            <button class="sim-button" type="button" data-life-speed="4">4×</button>
+            <button class="sim-button" type="button" data-life-speed="8">8×</button>
+            <button id="life-zoom-out" class="sim-button" type="button" aria-label="Zoom out">−</button>
+            <button id="life-zoom-in" class="sim-button" type="button" aria-label="Zoom in">+</button>
+            <button id="life-fit" class="sim-button" type="button">Fit</button>
+            <select id="life-topology" class="sim-select" aria-label="Map topology">
+              <option value="open">Open</option>
+              <option value="archipelago">Archipelago</option>
+              <option value="konigsberg">Königsberg</option>
+              <option value="ring">Ring</option>
+              <option value="spiral">Spiral</option>
+            </select>
+            <button id="life-reset" class="sim-button" type="button">New world</button>
+          </div>
+          <div class="life-stats" aria-live="polite">
+            <span><strong id="life-population">0</strong> alive</span>
+            <span><strong id="life-species">0</strong> forms</span>
+            <span><strong id="life-generation">0</strong> generation</span>
+            <span><strong id="life-year">0.0</strong> years</span>
+          </div>
+        </div>
+        <div class="life-layout">
+          <aside class="life-inspector" id="life-inspector">
+            <p class="app-eyebrow">Dominating forms</p>
+            <div id="life-inspector-content">
+              <h3>Loading forms</h3>
+              <p>Population share by form will appear here when the world is running.</p>
+            </div>
+          </aside>
+          <div class="life-canvas-wrap">
+            <canvas id="life-canvas" width="900" height="560"
+              aria-label="Animated ecosystem. Select a creature to inspect its traits."></canvas>
+            <p class="life-hint">Drag to explore, scroll to zoom, and click a creature to inspect it.</p>
+          </div>
+        </div>
+        <div class="life-legend">
+          <span><i class="legend-plant"></i> plant</span>
+          <span><i class="legend-carcass"></i> remnant</span>
+        </div>
+        <details class="life-advanced" id="life-advanced">
+          <summary class="life-advanced__summary">Advanced settings</summary>
+          <div class="life-params" id="life-params" aria-label="Simulation parameters"></div>
+        </details>
+      </div>
+      <p class="tool-note">A stylized evolutionary system, not a biological model. Every visible difference comes from
+        diet, size, and speed.</p>
+    </section>
+  </div>
+</section>

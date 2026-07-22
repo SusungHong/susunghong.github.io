@@ -81,4 +81,48 @@
       });
     });
   }
+
+  // A quiet door: three quick taps on the Korean name, or the classic code.
+  var footerKoreanName = document.querySelector(".footer-korean-name");
+  var secretTaps = [];
+  var secretCode = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a"
+  ];
+  var secretProgress = 0;
+
+  function enterPlayroom() {
+    window.location.assign("/playroom/");
+  }
+
+  if (footerKoreanName) {
+    footerKoreanName.addEventListener("click", function () {
+      var now = Date.now();
+      secretTaps = secretTaps.filter(function (time) {
+        return now - time < 2400;
+      });
+      secretTaps.push(now);
+      if (secretTaps.length >= 3) enterPlayroom();
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === secretCode[secretProgress]) {
+      secretProgress += 1;
+      if (secretProgress === secretCode.length) {
+        secretProgress = 0;
+        enterPlayroom();
+      }
+    } else {
+      secretProgress = event.key === secretCode[0] ? 1 : 0;
+    }
+  });
 })();

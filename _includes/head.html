@@ -5,6 +5,7 @@
 
 {% seo %}
 {% feed_meta %}
+{% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
 
 <link rel="icon" type="image/jpeg" href="{{ '/assets/img/switzerland.jpg' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
